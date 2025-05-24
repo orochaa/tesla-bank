@@ -55,7 +55,7 @@ export function HeaderSection(): React.JSX.Element {
     >
       <div className="relative">
         <div className="bg-tesla relative z-30 font-semibold text-white">
-          <div className="mx-auto flex w-11/12 max-w-6xl justify-between">
+          <div className="mx-auto flex w-11/12 max-w-7xl justify-between">
             <div className="flex gap-10">
               <TeslaBankIcon className="my-auto size-10" />
               <div className="flex gap-6">
@@ -102,7 +102,7 @@ export function HeaderSection(): React.JSX.Element {
           </div>
         </div>
         <motion.div
-          className="absolute left-0 z-10 h-96 w-full rounded-b-4xl bg-slate-100"
+          className="absolute left-0 z-10 h-96 w-full rounded-b-4xl bg-white"
           animate={headerController}
           initial="shrink"
           variants={{
