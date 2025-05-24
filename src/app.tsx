@@ -10,6 +10,7 @@ import {
   DollarSign,
   Gift,
   Heart,
+  MessageCircleQuestion,
   MousePointer2,
   Percent,
   Shield,
@@ -17,6 +18,8 @@ import {
   Smartphone,
   Smile,
 } from 'lucide-react'
+import { useState } from 'react'
+import { IoChevronDown } from 'react-icons/io5'
 import { SiApple, SiGoogleplay } from 'react-icons/si'
 
 export function App(): React.JSX.Element {
@@ -326,6 +329,58 @@ export function App(): React.JSX.Element {
               <TeslaBankIcon className="animate-grow size-36 text-white" />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="py-20">
+        <div className="mx-auto w-11/12 max-w-xl text-center">
+          <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
+            #AJUDA
+          </h3>
+          <h2 className="text-4xl font-semibold">
+            Ficou alguma <span className="text-tesla">dúvida</span>?
+          </h2>
+          <p className="m-4 text-lg font-medium">
+            Confira nossa lista de perguntas frequentes que recebemos.
+          </p>
+          <ul className="bg-tesla/10 space-y-0.5">
+            {[
+              'Como posso abrir uma conta bancária?',
+              'Qual é o meu saldo atual?',
+              'Como faço para transferir dinheiro para outra conta?',
+            ].map((question, i) => {
+              // eslint-disable-next-line react-hooks/rules-of-hooks
+              const [isOpen, setIsOpen] = useState(false)
+
+              return (
+                <li key={i} data-active={isOpen} className="bg-white">
+                  <button
+                    type="button"
+                    className="flex w-full items-center gap-4 py-10"
+                    onClick={() => setIsOpen(state => !state)}
+                  >
+                    <div className="bg-tesla/5 rounded-lg p-4">
+                      <MessageCircleQuestion className="text-tesla/70 size-7" />
+                    </div>
+                    <p className="grow text-left text-lg font-medium">
+                      {question}
+                    </p>
+                    <IoChevronDown
+                      data-active={isOpen}
+                      className="size-5 shrink-0 transition data-active:rotate-180"
+                    />
+                  </button>
+                  <p
+                    data-active={isOpen}
+                    className="h-0 overflow-hidden text-left text-lg font-medium opacity-0 transition-all data-active:h-32 data-active:opacity-100"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat, voluptatibus.
+                  </p>
+                </li>
+              )
+            })}
+          </ul>
         </div>
       </div>
     </div>
