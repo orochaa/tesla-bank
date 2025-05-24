@@ -383,6 +383,15 @@ export function App(): React.JSX.Element {
           </ul>
         </div>
       </div>
+
+      <footer className="bg-tesla py-10 text-white">
+        <div className="mx-auto flex w-11/12 max-w-7xl items-center justify-between">
+          <p className="text-lg font-medium">
+            Copyright © 2025 TeslaBank. Todos os direitos reservados.
+          </p>
+          <TeslaBankIcon className="size-12" />
+        </div>
+      </footer>
     </div>
   )
 }
