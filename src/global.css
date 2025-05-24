@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme {
+  --font-*: initial;
+
+  --color-tesla: #eb3850;
+}
+
+@custom-variant data-selected (&[data-selected="true"]);
+@custom-variant data-active (&[data-active="true"]);
+@custom-variant data-scrolled (&[data-scrolled="true"]);
+
+* {
+  -webkit-font-smoothing: antialiased;
+  font-family:
+    Inter,
+    'DM Sans',
+    Roboto,
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+li {
+  list-style: none;
+}
