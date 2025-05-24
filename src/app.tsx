@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { Header } from '@/components/header'
 import {
   ArrowRight,
@@ -130,7 +131,7 @@ export function App(): React.JSX.Element {
                     <item.Icon className="text-tesla/70 size-7" />
                   </div>
                   <div>
-                    <h3 className="mb-1 text-xl font-semibold">{item.title}</h3>
+                    <p className="mb-1 text-xl font-semibold">{item.title}</p>
                     <p className="font-medium">{item.description}</p>
                   </div>
                 </li>
@@ -193,13 +194,54 @@ export function App(): React.JSX.Element {
               item ? (
                 <li key={i} className="space-y-4 rounded-lg bg-white p-6">
                   <item.Icon className="text-tesla/70 size-7" />
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="text-lg font-semibold">{item.title}</p>
                   <p className="font-medium">{item.description}</p>
                 </li>
               ) : (
                 <span key={i} />
               )
             )}
+          </ul>
+        </div>
+      </div>
+
+      <div className="py-20">
+        <div className="mx-auto w-11/12 max-w-7xl">
+          <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
+            #DEPOIMENTOS
+          </h3>
+          <h2 className="text-4xl font-semibold">
+            <span className="text-tesla">TeslaBank</span> fora das telinhas:
+            <br />
+          </h2>
+          <p className="text-4xl font-medium">
+            Veja o que estão falando sobre nós.
+          </p>
+          <ul className="mt-16 grid grid-cols-3 gap-16">
+            {[
+              {
+                name: 'Nikola Tesla',
+                testimonial:
+                  'Estou realmente impressionado com a qualidade do serviço do TeslaBank. Desde que comecei a usá-lo, todas as minhas transações financeiras ficaram mais fáceis e ágeis.',
+              },
+              {
+                name: 'Steve Jobs',
+                testimonial:
+                  'O TeslaBank é uma verdadeira revolução no mundo financeiro. Eu não preciso mais enfrentar filas em agências bancárias ou lidar com taxas e tarifas absurdas.',
+              },
+              {
+                name: 'Alan Turing',
+                testimonial:
+                  'Eu era bastante cético em relação ao banco digital, mas decidi experimentar por curiosidade. Fiquei surpreso com a facilidade e segurança das transações, além de todas as funcionalidades exclusivas oferecidas.',
+              },
+            ].map((item, i) => (
+              <li key={i} className="space-y-4">
+                <p className="border-tesla border-l-3 pl-3 text-xl font-semibold">
+                  {item.name}
+                </p>
+                <p className="font-medium">{item.testimonial}</p>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
