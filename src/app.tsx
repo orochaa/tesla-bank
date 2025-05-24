@@ -3,9 +3,15 @@ import {
   ArrowRight,
   Check,
   CircleCheckBig,
+  Clock4,
+  CreditCard,
   DollarSign,
+  Gift,
   Heart,
   MousePointer2,
+  Percent,
+  Shield,
+  ShoppingCart,
   Smartphone,
   Smile,
 } from 'lucide-react'
@@ -131,6 +137,70 @@ export function App(): React.JSX.Element {
               ))}
             </ul>
           </div>
+        </div>
+      </div>
+
+      <div className="bg-tesla/10 py-20">
+        <div className="mx-auto w-11/12 max-w-7xl">
+          <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
+            #INOVAÇÃO
+          </h3>
+          <h2 className="text-4xl font-semibold">
+            Quais as vantagens de usar{' '}
+            <span className="text-tesla">TeslaBank</span>?
+          </h2>
+          <ul className="mt-10 grid grid-cols-4 gap-6">
+            {[
+              {
+                Icon: CreditCard,
+                title: 'Cartão TeslaBank',
+                description:
+                  'O Cartão TeslaBank é um cartão de crédito exclusivo para clientes da TeslaBank, uma instituição financeira líder em inovação e tecnologia.',
+              },
+              {
+                Icon: ShoppingCart,
+                title: 'Investimentos',
+                description:
+                  'O cartão também oferece diversos benefícios, como descontos em taxas de corretagem, acesso a fundos de investimento e cashback.',
+              },
+              {
+                Icon: Clock4,
+                title: 'Atendimento 24h',
+                description:
+                  'No TeslaBank, os usuários têm acesso a um atendimento ao cliente sempre disponível, 24 horas por dia, 7 dias por semana.',
+              },
+              null,
+              null,
+              {
+                Icon: Shield,
+                title: 'Segurança',
+                description:
+                  'Os usuários contam com sistemas avançados de segurança, como verificação de identidade, monitoramento de transações e notificações de uso não autorizado.',
+              },
+              {
+                Icon: Percent,
+                title: 'Sem taxas',
+                description:
+                  'Com o cartão TeslaBank, os usuários podem aproveitar ao máximo seus recursos financeiros, sem se preocupar com custos adicionais ou taxas escondidas.',
+              },
+              {
+                Icon: Gift,
+                title: 'Receba prêmios',
+                description:
+                  'Os usuários têm acesso a um programa de recompensas que oferece pontos a cada transação realizada com o cartão, que podem ser trocados por diversos prêmios.',
+              },
+            ].map((item, i) =>
+              item ? (
+                <li key={i} className="space-y-4 rounded-lg bg-white p-6">
+                  <item.Icon className="text-tesla/70 size-7" />
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="font-medium">{item.description}</p>
+                </li>
+              ) : (
+                <span key={i} />
+              )
+            )}
+          </ul>
         </div>
       </div>
     </div>
