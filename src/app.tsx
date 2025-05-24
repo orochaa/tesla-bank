@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import { Header } from '@/components/header'
 import { TeslaBankIcon } from '@/components/icons/tesla-bank'
+import { useWindowSize } from '@/hooks/use-window-size'
 import {
   ArrowRight,
   Check,
@@ -23,6 +24,8 @@ import { IoChevronDown } from 'react-icons/io5'
 import { SiApple, SiGoogleplay } from 'react-icons/si'
 
 export function App(): React.JSX.Element {
+  const { windowWidth } = useWindowSize()
+
   return (
     <div className="min-h-svh w-full bg-white">
       <Header />
@@ -39,7 +42,7 @@ export function App(): React.JSX.Element {
               Com TeslaBank, você pode realizar transferências bancárias com
               zero taxa e pagar suas contas.
             </p>
-            <ul className="my-10 grid grid-cols-2 gap-6">
+            <ul className="my-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
               {[
                 'Transferência instantânea',
                 'Sem taxas absurdas',
@@ -54,29 +57,35 @@ export function App(): React.JSX.Element {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col items-center gap-6 sm:flex-row">
               <a
                 href="#"
-                className="bg-tesla hover:bg-tesla/85 flex w-xs items-center justify-center gap-2 rounded p-4 text-xl font-semibold text-white transition hover:scale-105"
+                className="bg-tesla hover:bg-tesla/85 flex w-full items-center justify-center gap-2 rounded p-4 text-xl font-semibold text-white transition hover:scale-105 sm:w-xs"
               >
                 Abrir uma conta
                 <ArrowRight />
               </a>
-              <a href="#">
-                <SiApple className="text-tesla hover:text-tesla/85 size-15 transition hover:scale-110" />
-              </a>
-              <a href="#">
-                <SiGoogleplay className="text-tesla hover:text-tesla/85 size-15 transition hover:scale-110" />
-              </a>
+              <div className="flex items-center gap-6">
+                <a href="#">
+                  <SiApple className="text-tesla hover:text-tesla/85 size-15 transition hover:scale-110" />
+                </a>
+                <a href="#">
+                  <SiGoogleplay className="text-tesla hover:text-tesla/85 size-15 transition hover:scale-110" />
+                </a>
+              </div>
             </div>
           </div>
-          <img src="/assets/cards.svg" alt="cards.svg" />
+          <img
+            src="/assets/cards.svg"
+            alt="cards.svg"
+            className="hidden xl:block"
+          />
         </div>
       </div>
 
       <div className="py-20">
-        <div className="mx-auto grid w-11/12 max-w-7xl grid-cols-2">
-          <div className="relative mx-auto size-fit">
+        <div className="mx-auto grid w-11/12 max-w-7xl grid-cols-1 lg:grid-cols-2">
+          <div className="relative mx-auto hidden size-fit lg:block">
             <img
               src="/assets/smartphone.png"
               alt="smartphone.png"
@@ -98,7 +107,7 @@ export function App(): React.JSX.Element {
               </div>
             </div>
           </div>
-          <div className="w-lg">
+          <div className="lg:max-w-lg">
             <h2 className="text-4xl font-semibold">
               Abra sua conta <span className="text-tesla">gratuita!</span>
             </h2>
@@ -154,7 +163,7 @@ export function App(): React.JSX.Element {
             Quais as vantagens de usar{' '}
             <span className="text-tesla">TeslaBank</span>?
           </h2>
-          <ul className="mt-10 grid grid-cols-4 gap-6">
+          <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 Icon: CreditCard,
@@ -201,9 +210,9 @@ export function App(): React.JSX.Element {
                   <p className="text-lg font-semibold">{item.title}</p>
                   <p className="font-medium">{item.description}</p>
                 </li>
-              ) : (
+              ) : windowWidth > 1024 ? (
                 <span key={i} />
-              )
+              ) : null
             )}
           </ul>
         </div>
@@ -221,7 +230,7 @@ export function App(): React.JSX.Element {
           <p className="text-4xl font-medium">
             Veja o que estão falando sobre nós.
           </p>
-          <ul className="mt-16 grid grid-cols-3 gap-16">
+          <ul className="mt-16 grid grid-cols-1 gap-16 md:grid-cols-3">
             {[
               {
                 name: 'Nikola Tesla',
@@ -288,7 +297,7 @@ export function App(): React.JSX.Element {
       </div>
 
       <div className="bg-tesla/10 py-20">
-        <div className="mx-auto grid w-11/12 max-w-7xl grid-cols-2">
+        <div className="mx-auto grid w-11/12 max-w-7xl grid-cols-1 lg:grid-cols-2">
           <div className="max-w-lg">
             <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
               #EXPERIÊNCIA
@@ -324,7 +333,7 @@ export function App(): React.JSX.Element {
               </a>
             </div>
           </div>
-          <div>
+          <div className="hidden lg:block">
             <div className="bg-tesla mx-auto flex size-80 items-center justify-center rounded-4xl">
               <TeslaBankIcon className="animate-grow size-36 text-white" />
             </div>
@@ -367,7 +376,7 @@ export function App(): React.JSX.Element {
                     </p>
                     <IoChevronDown
                       data-active={isOpen}
-                      className="size-5 shrink-0 transition data-active:rotate-180"
+                      className="text-tesla/70 size-5 shrink-0 transition data-active:rotate-180"
                     />
                   </button>
                   <p
@@ -385,7 +394,7 @@ export function App(): React.JSX.Element {
       </div>
 
       <footer className="bg-tesla py-10 text-white">
-        <div className="mx-auto flex w-11/12 max-w-7xl items-center justify-between">
+        <div className="mx-auto flex w-11/12 max-w-7xl items-center justify-between gap-10">
           <p className="text-lg font-medium">
             Copyright © 2025 TeslaBank. Todos os direitos reservados.
           </p>
