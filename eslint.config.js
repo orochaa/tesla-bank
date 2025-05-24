@@ -6,12 +6,7 @@ export default [
   {
     rules: {
       'jsx-a11y/anchor-is-valid': 'off',
-    },
-  },
-  {
-    files: ['**/index.ts'],
-    rules: {
-      '@stylistic/padding-line-between-statements': 'off',
+      '@typescript-eslint/no-magic-numbers': 'off',
     },
   },
 ]

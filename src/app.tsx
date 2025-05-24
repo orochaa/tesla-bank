@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { Header } from '@/components/header'
+import { TeslaBankIcon } from '@/components/icons/tesla-bank'
 import {
   ArrowRight,
   Check,
@@ -279,6 +280,51 @@ export function App(): React.JSX.Element {
             >
               Abrir uma conta
             </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-tesla/10 py-20">
+        <div className="mx-auto grid w-11/12 max-w-7xl grid-cols-2">
+          <div className="max-w-lg">
+            <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
+              #EXPERIÊNCIA
+            </h3>
+            <h2 className="text-4xl font-semibold">
+              Uma nova experiência em{' '}
+              <span className="text-tesla">serviços financeiros</span>.
+            </h2>
+            <p className="mt-6 text-lg font-medium">
+              Nossa abordagem inovadora e personalizada oferece uma experiência
+              única para atender às suas necessidades.
+            </p>
+            <div className="mt-10 grid w-fit grid-cols-2 gap-3">
+              <a
+                href="#"
+                className="flex items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
+              >
+                <SiApple className="size-9" />
+                <div>
+                  <p className="text-base font-medium">Download via</p>
+                  <p className="text-lg font-semibold">AppleStore</p>
+                </div>
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
+              >
+                <SiGoogleplay className="size-9" />
+                <div>
+                  <p className="text-base font-medium">Download via</p>
+                  <p className="text-lg font-semibold">GooglePlay</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div className="bg-tesla mx-auto flex size-80 items-center justify-center rounded-4xl">
+              <TeslaBankIcon className="animate-grow size-36 text-white" />
+            </div>
           </div>
         </div>
       </div>
