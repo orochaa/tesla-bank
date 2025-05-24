@@ -5,6 +5,19 @@
   --font-*: initial;
 
   --color-tesla: #eb3850;
+
+  --animate-float-3: float 3s ease-in-out infinite;
+  --animate-float-4: float 4s ease-in-out infinite;
+  --animate-float-5: float 5s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translate(0rem, 0rem);
+    }
+    50% {
+      transform: translate(0.75rem, -1.5rem);
+    }
+  }
 }
 
 @custom-variant data-selected (&[data-selected="true"]);

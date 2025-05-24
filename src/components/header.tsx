@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-bind */
 import { TeslaBankIcon } from '@/components/icons/tesla-bank'
 import { motion, useAnimation } from 'motion/react'
@@ -37,14 +36,14 @@ const headerLabels: HeaderLabel[] = [
   },
 ]
 
-export function HeaderSection(): React.JSX.Element {
+export function Header(): React.JSX.Element {
   const [header, setHeader] = useState<HeaderLabel>()
   const [isHeaderOptionsVisible, setIsHeaderOptionsVisible] = useState(false)
   const headerController = useAnimation()
 
   return (
     <div
-      className="sticky top-0 left-0"
+      className="sticky top-0 left-0 z-30"
       onPointerLeave={() => {
         headerController
           .start('hide')
@@ -102,7 +101,7 @@ export function HeaderSection(): React.JSX.Element {
           </div>
         </div>
         <motion.div
-          className="absolute left-0 z-10 h-96 w-full rounded-b-4xl bg-white"
+          className="absolute left-0 h-96 w-full"
           animate={headerController}
           initial="shrink"
           variants={{
@@ -112,10 +111,12 @@ export function HeaderSection(): React.JSX.Element {
             },
             hide: {
               opacity: 0,
+              visibility: 'hidden',
             },
             show: {
               top: 56,
               opacity: 1,
+              visibility: 'visible',
               transition: {
                 ease: 'easeInOut',
                 duration: 0.3,
@@ -123,41 +124,43 @@ export function HeaderSection(): React.JSX.Element {
             },
           }}
         >
-          <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-2 gap-10 py-10">
-            <div>
-              <div className="bg-tesla mx-auto flex h-40 w-full items-center justify-center rounded-4xl p-6">
-                <TeslaBankIcon className="size-28 text-white" />
+          <div className="relative z-30 size-full rounded-b-4xl bg-white">
+            <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-2 gap-10 py-10">
+              <div>
+                <div className="bg-tesla mx-auto flex h-40 w-full items-center justify-center rounded-4xl p-6">
+                  <TeslaBankIcon className="size-28 text-white" />
+                </div>
+                <h2 className="mt-6 mb-2 text-2xl font-semibold">TeslaBank</h2>
+                <p className="text-lg font-medium">
+                  Conta digital grátis, cartão internacional e sem anuidade,
+                  atendimento 24 horas e muito mais.
+                </p>
               </div>
-              <h2 className="mt-6 mb-2 text-2xl font-semibold">TeslaBank</h2>
-              <p className="text-lg font-medium">
-                Conta digital grátis, cartão internacional e sem anuidade,
-                atendimento 24 horas e muito mais.
-              </p>
-            </div>
-            <ul>
-              {header?.options.map((option, i) => (
-                <motion.li
-                  key={option}
-                  initial={{
-                    opacity: 0,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    transition: {
-                      duration: 0.2,
-                      delay: 0.1 * i,
-                    },
-                  }}
-                >
-                  <a
-                    href="#"
-                    className="hover:text-tesla block p-3 text-lg font-medium transition-colors"
+              <ul>
+                {header?.options.map((option, i) => (
+                  <motion.li
+                    key={option}
+                    initial={{
+                      opacity: 0,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      transition: {
+                        duration: 0.2,
+                        delay: 0.1 * i,
+                      },
+                    }}
                   >
-                    {option}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
+                    <a
+                      href="#"
+                      className="hover:text-tesla block p-3 text-lg font-medium transition-colors"
+                    >
+                      {option}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
         </motion.div>
       </div>
