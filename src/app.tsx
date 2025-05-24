@@ -245,6 +245,43 @@ export function App(): React.JSX.Element {
           </ul>
         </div>
       </div>
+
+      <div className="py-20">
+        <div className="mx-auto w-11/12 max-w-7xl text-center">
+          <h3 className="text-tesla mb-1.5 text-xl font-medium italic">
+            #CARTÕES
+          </h3>
+          <h2 className="mx-auto mb-6 max-w-sm text-4xl font-semibold">
+            <span className="text-tesla">TeslaBank</span> tem o cartão perfeito
+            para você!
+            <br />
+          </h2>
+          <p className="mx-auto max-w-3xl text-lg font-medium">
+            Encontre o cartão perfeito para suas necessidades financeiras. Seja
+            para viagens ou compras do dia a dia, temos uma opção que se adapta
+            a você.
+          </p>
+          <img
+            src="/assets/cards-2.svg"
+            alt="cards-2.svg"
+            className="mx-auto my-10"
+          />
+          <div className="mx-auto grid w-fit grid-cols-2 gap-3">
+            <a
+              href="#"
+              className="border-tesla flex items-center justify-center rounded-lg border-2 px-6 py-3 text-lg font-semibold"
+            >
+              Comparar cartões
+            </a>
+            <a
+              href="#"
+              className="bg-tesla flex items-center justify-center rounded-lg p-4 px-6 py-3 text-lg font-semibold text-white"
+            >
+              Abrir uma conta
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
