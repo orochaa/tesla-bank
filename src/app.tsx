@@ -279,7 +279,7 @@ export function App(): React.JSX.Element {
             alt="cards-2.svg"
             className="mx-auto my-10"
           />
-          <div className="mx-auto grid w-fit grid-cols-2 gap-3">
+          <div className="mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:grid-cols-2">
             <a
               href="#"
               className="border-tesla flex items-center justify-center rounded-lg border-2 px-6 py-3 text-lg font-semibold"
@@ -310,12 +310,12 @@ export function App(): React.JSX.Element {
               Nossa abordagem inovadora e personalizada oferece uma experiência
               única para atender às suas necessidades.
             </p>
-            <div className="mt-10 grid w-fit grid-cols-2 gap-3">
+            <div className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#"
-                className="flex items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
+                className="flex max-w-3xs items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
               >
-                <SiApple className="size-9" />
+                <SiApple className="size-9 shrink-0" />
                 <div>
                   <p className="text-base font-medium">Download via</p>
                   <p className="text-lg font-semibold">AppleStore</p>
@@ -323,9 +323,9 @@ export function App(): React.JSX.Element {
               </a>
               <a
                 href="#"
-                className="flex items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
+                className="flex max-w-3xs items-center gap-4 rounded-lg bg-zinc-700 px-7 py-2 text-white"
               >
-                <SiGoogleplay className="size-9" />
+                <SiGoogleplay className="size-9 shrink-0" />
                 <div>
                   <p className="text-base font-medium">Download via</p>
                   <p className="text-lg font-semibold">GooglePlay</p>
@@ -395,9 +395,10 @@ export function App(): React.JSX.Element {
 
       <footer className="bg-tesla py-10 text-white">
         <div className="mx-auto flex w-11/12 max-w-7xl items-center justify-between gap-10">
-          <p className="text-lg font-medium">
-            Copyright © 2025 TeslaBank. Todos os direitos reservados.
-          </p>
+          <div className="flex flex-wrap gap-x-1 text-lg font-medium">
+            <p>Copyright © 2025 TeslaBank.</p>
+            <p>Todos os direitos reservados.</p>
+          </div>
           <TeslaBankIcon className="size-12" />
         </div>
       </footer>
