@@ -37,6 +37,7 @@
 
 * {
   -webkit-font-smoothing: antialiased;
+
   font-family:
     Inter,
     'DM Sans',
@@ -44,6 +45,10 @@
     system-ui,
     -apple-system,
     sans-serif;
+
+  ::selection {
+    background-color: #ff6378;
+  }
 }
 
 button {
