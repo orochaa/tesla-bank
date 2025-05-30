@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import { Header } from '@/components/header'
 import { TeslaBankIcon } from '@/components/icons/tesla-bank'
+import { useDailyAppPing } from '@/hooks/use-daily-app-ping'
 import { useWindowSize } from '@/hooks/use-window-size'
 import {
   ArrowRight,
@@ -25,6 +26,8 @@ import { SiApple, SiGoogleplay } from 'react-icons/si'
 
 export function App(): React.JSX.Element {
   const { windowWidth } = useWindowSize()
+
+  useDailyAppPing()
 
   return (
     <div className="min-h-svh w-full bg-white">
